@@ -1,0 +1,2 @@
+This is a test file for the FileShare application.
+You can upload this file to test the drag-and-drop functionality!

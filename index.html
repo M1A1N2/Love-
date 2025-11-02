@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileShare - Share Files Instantly</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 4L4 10V22L16 28L28 22V10L16 4Z" fill="#6366f1" stroke="#6366f1" stroke-width="2"/>
+                    <circle cx="16" cy="16" r="4" fill="white"/>
+                </svg>
+                <h1>FileShare</h1>
+            </div>
+            <p class="tagline">Share files instantly with your friends</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section" id="uploadSection">
+                <div class="drop-zone" id="dropZone">
+                    <svg class="upload-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    <h2>Drop your files here</h2>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" multiple hidden>
+                    <button class="browse-btn" id="browseBtn">Browse Files</button>
+                </div>
+            </div>
+
+            <div class="files-section" id="filesSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Your Files</h2>
+                    <button class="add-more-btn" id="addMoreBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                        Add More
+                    </button>
+                </div>
+                
+                <div class="files-grid" id="filesGrid"></div>
+
+                <div class="share-section">
+                    <div class="share-box">
+                        <h3>Share with Friends</h3>
+                        <p class="share-description">Copy the link below to share your files</p>
+                        <div class="share-link-container">
+                            <input type="text" class="share-link-input" id="shareLinkInput" readonly>
+                            <button class="copy-btn" id="copyBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                        <div class="copy-success" id="copySuccess">✓ Link copied to clipboard!</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Secure file sharing • No registration required • Files stored locally</p>
+        </footer>
+    </div>
+
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
